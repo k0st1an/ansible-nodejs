@@ -1,38 +1,58 @@
-Role Name
-=========
+# Ansible NodeJS
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/k0st1an/ansible-nodejs.svg?branch=master)](https://travis-ci.org/k0st1an/ansible-nodejs)
 
-Requirements
-------------
+This role set up latest version NodeJS (7.x).
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Role Variables
 
-Role Variables
---------------
+Available variable:
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+```yaml
+nodejs_build_essential: true
+```
 
-Dependencies
-------------
+## Example Playbook
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+You can create a few files for using this role. `pb.yml`:
 
-Example Playbook
-----------------
+```yaml
+---
+- hosts: test
+  become: yes
+  roles:
+    - ansible-nodejs
+```
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+`ansible.cfg`:
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```
+[defaults]
+roles_path=../
+ask_sudo_pass = True
+inventory = hosts
+```
 
-License
--------
+`hosts`:
 
-BSD
+```
+[test]
+a.b.c.d
+```
 
-Author Information
-------------------
+And run this playbook:
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+```
+$ ansible-playbook pb.yml
+...
+```
+
+## License
+
+MIT
+
+## Author Information
+
+- Author: Konstantin Kruglov
+- GitHub: https://github.com/k0st1an
+- Contact: kruglovk@gmail.com
