@@ -1,6 +1,6 @@
 # Ansible NodeJS
 
-[![Build Status](https://travis-ci.org/k0st1an/ansible-nodejs.svg?branch=master)](https://travis-ci.org/k0st1an/ansible-nodejs)
+[![Build Status](https://travis-ci.org/k0st1an/ansible-nodejs.svg?branch=master)](https://travis-ci.org/k0st1an/ansible-nodejs) [![Ansible Galaxy](https://img.shields.io/badge/galaxy-k0st1an.nodejs-blue.svg?style=flat)](https://galaxy.ansible.com/k0st1an/nodejs/)
 
 This role set up latest version NodeJS (7.x).
 
