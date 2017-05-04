@@ -1,4 +1,24 @@
 ---
 # tasks file for ansible-nodejs
-- debug:
-    msg: "test"
+- name: Download set up NodeJS script
+  get_url:
+    url: https://deb.nodesource.com/setup_7.x
+    dest: /tmp/nodejs_7
+
+- name: Run set up script
+  command: bash /tmp/nodejs_7
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+
+- name: Install NodeJS
+  apt:
+    name: nodejs
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Install build-essential
+  apt:
+    name: build-essential
+    update_cache: yes
+    cache_valid_time: 3600
+  when: nodejs_build_essential

@@ -1,2 +1,3 @@
 ---
 # defaults file for ansible-nodejs
+nodejs_build_essential: true
