@@ -1,3 +1,4 @@
 ---
 # defaults file for ansible-nodejs
 nodejs_build_essential: true
+nodejs_version:         8

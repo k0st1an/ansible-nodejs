@@ -2,11 +2,11 @@
 # tasks file for ansible-nodejs
 - name: Download set up NodeJS script
   get_url:
-    url: https://deb.nodesource.com/setup_7.x
-    dest: /tmp/nodejs_7
+    url: 'https://deb.nodesource.com/setup_{{ nodejs_version }}.x'
+    dest: '/tmp/nodejs_{{ nodejs_version }}'
 
 - name: Run set up script
-  command: bash /tmp/nodejs_7
+  command: 'bash /tmp/nodejs_{{ nodejs_version }}'
   args:
     creates: /etc/apt/sources.list.d/nodesource.list
 
